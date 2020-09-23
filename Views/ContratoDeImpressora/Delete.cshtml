@@ -1,0 +1,76 @@
+﻿@model PrintManagement.Models.ContratoDeImpressora
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="text-danger">Delete</h1>
+    <h4>Tem certeza de que deseja excluir?</h4>
+    <h4>Contrato De Impressora</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fornecedor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fornecedor.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Franquia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Franquia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorContratado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorContratado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorExcedente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorExcedente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vigencia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vigencia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button class="btn btn-danger btn-icon-split">
+            <span class="icon text-white">
+                <i class="fas fa-trash-alt"></i>
+            </span>
+            <span class="text">Delete</span>
+        </button>
+        <a class="btn btn-danger btn-icon-split" asp-action="Index">
+            <span class="icon text-white">
+                <i class="fas fa-arrow-circle-left"></i>
+            </span>
+            <span class="text text-white">Voltar</span>
+        </a>
+    </form>
+
+
+</div>

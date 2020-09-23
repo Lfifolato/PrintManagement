@@ -1,0 +1,58 @@
+﻿@model PrintManagement.Models.ContadorDeImpressao
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Contador De Impressão</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataLeitura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataLeitura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeUsuario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Impressora)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Impressora.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Departamento.Nome)
+        </dd>
+    </dl>
+</div>
+<a class="btn btn-danger btn-icon-split" asp-action="Edit" asp-route-id="@Model.Id">
+    <span class="icon text-white">
+        <i class="fas fa-pencil-alt"></i>
+    </span>
+    <span class="text text-white">Editar</span>
+</a>
+
+<a class="btn btn-danger btn-icon-split" asp-action="Index">
+    <span class="icon text-white">
+        <i class="fas fa-arrow-circle-left"></i>
+    </span>
+    <span class="text text-white">Voltar</span>
+</a>

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PrintManagement.Models.ContratoDeImpressora>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <h1 class="h3 mb-2 text-gray-800">Fornecedor</h1>
+    <p class="mb-4">Listagem  De Contratos </p>
+
+    <p>
+        <a class="btn btn-danger btn-icon-split" asp-action="Create">
+            <span class="icon text-white">
+                <i class="fas fa-plus-circle"></i>
+            </span>
+            <span class="text text-white">Adicionar</span>
+        </a>
+
+
+        <div class="table">
+            <table class="table table-bordered table-hover" id="sisDataTable" width="100%">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fornecedor)                           
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Franquia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ValorContratado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ValorExcedente)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Vigencia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DataInicio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fornecedor.Nome)                                
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Franquia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorContratado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ValorExcedente)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Vigencia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DataInicio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tipo)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt text-danger"></i></a> |
+                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-search text-danger"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </p>
+</div>

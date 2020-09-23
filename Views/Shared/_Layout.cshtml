@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Print Management</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="~/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="~/assets/css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <!--DataTeble-->
+    <link href="~/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Print Management </div>
+            </a>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Pages Collapse Menu  -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
+                    <i class="fas fa-user-friends"></i>
+                    <span>User</span>
+                </a>
+                <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" href="~/funcionario/index">Listar</a>
+                        <a class="collapse-item" href="~/funcionario/adionar">Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu  -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseimp" aria-expanded="true" aria-controls="collapseimp">
+                    <i class="fas fa-print" _mstvisible="2"></i>
+                    <span>Impressora</span>
+                </a>
+                <div id="collapseimp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" asp-controller="Impressora" asp-action="Index">Listar</a>
+                        <a class="collapse-item" asp-controller="Impressora" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsemodelo" aria-expanded="true" aria-controls="collapsemodelo">
+                    <i class="fas fa-cogs"></i>
+                    <span>Modelo</span>
+                </a>
+                <div id="collapsemodelo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" asp-controller="Modelo" asp-action="Index" >Listar</a>
+                        <a class="collapse-item" asp-controller="Modelo" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsedep" aria-expanded="true" aria-controls="collapsedep">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Departamento</span>
+                </a>
+                <div id="collapsedep" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item"  asp-controller="Departamento" asp-action="Index">Listar</a>
+                        <a class="collapse-item" asp-controller="Departamento" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefilial" aria-expanded="true" aria-controls="collapsefilial">
+                    <i class="fas fa-building"></i>
+                    <span>Filial</span>
+                </a>
+                <div id="collapsefilial" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item"  asp-controller="Filial" asp-action="Index" >Listar</a>
+                        <a class="collapse-item" asp-controller="Filial" asp-action="Create"  >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsecontrato" aria-expanded="true" aria-controls="collapsecontrato">
+                    <i class="fas fa-money-check-alt"></i>
+                    <span>Contrato</span>
+                </a>
+                <div id="collapsecontrato" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" asp-controller="ContratoDeImpressora" asp-action="Index">Listar</a>
+                        <a class="collapse-item" asp-controller="ContratoDeImpressora" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseforne" aria-expanded="true" aria-controls="collapseforne">
+                    <i class="fas fa-id-card"></i>
+                    <span>Fornecedor</span>
+                </a>
+                <div id="collapseforne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" asp-controller="Fornecedor" asp-action="Index" >Listar</a>
+                        <a class="collapse-item"  asp-controller="Fornecedor" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsecontador" aria-expanded="true" aria-controls="collapsecontador">
+                    <i class="fas fa-sort-numeric-up-alt"></i>
+                    <span>Contador</span>
+                </a>
+                <div id="collapsecontador" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" asp-controller="ContadorDeImpressao" asp-action="Index" >Listar</a>
+                        <a class="collapse-item" asp-controller="ContadorDeImpressao" asp-action="Create" >Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+
+
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapselogs" aria-expanded="true" aria-controls="collapselogs">
+                    <i class="fas fa-file-csv" _mstvisible="2"></i>
+                    <span>LogsImpressão</span>
+                </a>
+                <div id="collapselogs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Função:</h6>
+                        <a class="collapse-item" href="~/funcionario/index">Listar</a>
+                        <a class="collapse-item" href="~/funcionario/adionar">Adicionar</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+        <!-- End of Sidebar -->
+        <div class="container-fluid">
+
+            <main role="main" class="pb-3" style="padding-top: 25px">
+                @RenderBody()
+            </main>
+
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>&copy; @DateTime.Now.Year - Luiz Fifolato</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="~/Assets/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Assets/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="~/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="~/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="~/Assets/js/sb-admin-2.min.js"></script>
+        <script src="~/Assets/js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="~/Assets/vendor/chart.js/Chart.min.js"></script>
+        <script src="~/Assets/vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="~/Assets/js/demo/chart-pie-demo.js"></script>
+        <script src="~/Assets/js/demo/chart-area-demo.js"></script>
+        <script src="~/Assets/js/demo/chart-pie-demo.js"></script>
+        <script src="~/Assets/js/demo/datatables-demo.js"></script>
+
+        <script src="~/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+</body>
+
+</html>

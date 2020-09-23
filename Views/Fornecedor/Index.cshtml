@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PrintManagement.Models.Fornecedor>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+
+    <h1 class="h3 mb-2 text-gray-800">Fornecedor</h1>
+    <p class="mb-4">Listagem  De Fornecedor</p>
+
+    <p>
+        <a class="btn btn-danger btn-icon-split" asp-action="Create">
+            <span class="icon text-white">
+                <i class="fas fa-plus-circle"></i>
+            </span>
+            <span class="text text-white">Adicionar</span>
+        </a>
+
+
+        <div class="table">
+            <table class="table table-bordered table-hover" id="sisDataTable" width="100%">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Endereco)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Contato)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Site)
+                        </th>
+                        <th scope="col">
+                            Ação:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Endereco)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contato)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Telefone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Site)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt text-danger"></i></a> |
+                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-search text-danger"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </p>
+</div>
+
+
