@@ -55,7 +55,7 @@ namespace PrintManagement.Controllers
         // POST: ContratoDeImpressoras/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Tipo,Idfornecedor,Franquia,ValorContrato,ValorExcedente,Vigencia,DataInicio")] ContratoDeImpressora contratoDeImpressora)
+        public async Task<IActionResult> Create([Bind("Id,Tipo,IdFornecedor,Franquia,ValorContrato,ValorExcedente,Vigencia,DataInicio")] ContratoDeImpressora contratoDeImpressora)
         {
             if (ModelState.IsValid)
             {

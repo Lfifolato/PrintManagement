@@ -51,7 +51,7 @@ namespace PrintManagement.Controllers
         // GET: Impressora/Create
         public IActionResult Create()
         {
-            ViewData["IdContrato"] = new SelectList(_context.ContratoDeImpressoras, "Id", "Nome");
+            ViewData["IdContrato"] = new SelectList(_context.ContratoDeImpressoras, "Id", "Tipo");
             ViewData["IdDepartamento"] = new SelectList(_context.Derpartamentos, "Id", "Nome");
             ViewData["IdFilial"] = new SelectList(_context.Filials, "Id", "Nome");
             ViewData["IdModelo"] = new SelectList(_context.Modelos, "Id", "Nome");
