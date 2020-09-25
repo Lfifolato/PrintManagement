@@ -22,7 +22,7 @@ namespace PrintManagement.Controllers
         // GET: ContadorDeImpressaos
         public async Task<IActionResult> Index()
         {
-            var dataContext = _context.contadorDeImpressaos.Include(c => c.Impressora).Include(c => c.Departamento);
+            var dataContext = _context.contadorDeImpressaos.Include(c => c.Impressora).Include(c => c.Departamento).Include(c => c.Tecnico);
             return View(await dataContext.ToListAsync());
         }
 
@@ -49,6 +49,7 @@ namespace PrintManagement.Controllers
         // GET: ContadorDeImpressaos/Create
         public IActionResult Create()
         {
+            ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "Id", "Nome");
             ViewData["IdDepartamento"] = new SelectList(_context.Derpartamentos, "Id", "Nome");
             ViewData["IdImpressora"] = new SelectList(_context.Impressoras, "Id", "Nome");
             return View();
@@ -57,7 +58,7 @@ namespace PrintManagement.Controllers
         // POST: ContadorDeImpressaos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Quantidade,IdImpressora,DataLeitura,NomeUsuario,IdDepartamento")] ContadorDeImpressao contadorDeImpressao)
+        public async Task<IActionResult> Create([Bind("Id,Quantidade,IdImpressora,DataLeitura,IdTecnico,IdDepartamento")] ContadorDeImpressao contadorDeImpressao)
         {
             if (ModelState.IsValid)
             {   
@@ -65,6 +66,7 @@ namespace PrintManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "Id", "Nome");
             ViewData["IdDepartamento"] = new SelectList(_context.Derpartamentos, "Id", "Nome", contadorDeImpressao.IdDepartamento);
             ViewData["IdImpressora"] = new SelectList(_context.Impressoras, "Id", "Nome", contadorDeImpressao.IdImpressora);
             return View(contadorDeImpressao);
@@ -83,6 +85,7 @@ namespace PrintManagement.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "Id", "Nome");
             ViewData["IdDepartamento"] = new SelectList(_context.Derpartamentos, "Id", "Nome", contadorDeImpressao.IdDepartamento);
             ViewData["IdImpressora"] = new SelectList(_context.Impressoras, "Id", "Nome", contadorDeImpressao.IdImpressora);
             return View(contadorDeImpressao);
@@ -91,7 +94,7 @@ namespace PrintManagement.Controllers
         // POST: ContadorDeImpressaos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Quantidade,IdImpressora,DataLeitura,NomeUsuario,IdDepartamento")] ContadorDeImpressao contadorDeImpressao)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,Quantidade,IdImpressora,DataLeitura,IdTecnico,IdDepartamento")] ContadorDeImpressao contadorDeImpressao)
         {
             if (id != contadorDeImpressao.Id)
             {
@@ -118,6 +121,7 @@ namespace PrintManagement.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "Id", "Nome");
             ViewData["IdDepartamento"] = new SelectList(_context.Derpartamentos, "Id", "Nome", contadorDeImpressao.IdDepartamento);
             ViewData["IdImpressora"] = new SelectList(_context.Impressoras, "Id", "Nome", contadorDeImpressao.IdImpressora);
             return View(contadorDeImpressao);

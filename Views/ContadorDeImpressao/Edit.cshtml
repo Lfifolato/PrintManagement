@@ -30,9 +30,8 @@
                 <span asp-validation-for="DataLeitura" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NomeUsuario" class="control-label"></label>
-                <input asp-for="NomeUsuario" class="form-control" />
-                <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+                <label asp-for="IdTecnico" class="control-label"></label>
+                <select asp-for="IdTecnico" class="form-control" asp-items="ViewBag.IdTecnico"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdDepartamento" class="control-label"></label>

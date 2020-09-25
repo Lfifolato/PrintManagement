@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PrintManagement.Models.ContadorDeImpressao>
+﻿@model IEnumerable<PrintManagement.Models.Tecnico>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,10 +8,11 @@
 
 <div class="container-fluid">
 
-    <h1 class="h3 mb-2 text-gray-800">Contador De Impressão</h1>
-    <p class="mb-4">Listagem  De Contador</p>
+    <h1 class="h3 mb-2 text-gray-800">Tecnico</h1>
+    <p class="mb-4">Listagem  De Modelos</p>
 
     <p>
+
         <a class="btn btn-danger btn-icon-split" asp-action="Create">
             <span class="icon text-white">
                 <i class="fas fa-plus-circle"></i>
@@ -19,29 +20,20 @@
             <span class="text text-white">Adicionar</span>
         </a>
 
-
         <div class="table">
             <table class="table table-bordered table-hover" id="sisDataTable" width="100%">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Impressora):
+                            @Html.DisplayNameFor(model => model.Nome)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Quantidade)
+                            @Html.DisplayNameFor(model => model.Email)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Departamento):
+                            @Html.DisplayNameFor(model => model.Filial)
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DataLeitura)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Tecnico)
-                        </th>
-                        <th>
-                            Ação:
-                        </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,19 +41,13 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Impressora.Nome)
+                                @Html.DisplayFor(modelItem => item.Nome)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Quantidade)
+                                @Html.DisplayFor(modelItem => item.Email)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Departamento.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DataLeitura)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Tecnico.Nome)
+                                @Html.DisplayFor(modelItem => item.Filial.Nome)
                             </td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt text-danger"></i></a> |

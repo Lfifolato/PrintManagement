@@ -1,4 +1,4 @@
-﻿@model PrintManagement.Models.ContadorDeImpressao
+﻿@model PrintManagement.Models.Tecnico
 
 @{
     ViewData["Title"] = "Details";
@@ -8,38 +8,26 @@
 <h1>Detalhes</h1>
 
 <div>
-    <h4>Contador De Impressão</h4>
+    <h4>Tecnico</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantidade)
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quantidade)
+            @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataLeitura)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataLeitura)
+            @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tecnico)
+            @Html.DisplayNameFor(model => model.Filial)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tecnico)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Impressora)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Impressora.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Departamento)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Departamento.Nome)
+            @Html.DisplayFor(model => model.Filial.Nome)
         </dd>
     </dl>
 </div>

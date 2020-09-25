@@ -18,7 +18,7 @@ namespace PrintManagement.Models
         public int Quantidade { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
-        [Display(Name = "Empressora:")]
+        [Display(Name = "Impressora:")]
         [ForeignKey("Impressora")]
         public long IdImpressora { get; set; }
 
@@ -28,8 +28,9 @@ namespace PrintManagement.Models
         public DateTime DataLeitura { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
-        [Display(Name = "Nome Do Usuario:")]
-        public string NomeUsuario { get; set; }
+        [Display(Name = "Tecnico:")]
+        [ForeignKey("Tecnico")]
+        public long IdTecnico { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Departamento:")]
@@ -39,6 +40,8 @@ namespace PrintManagement.Models
         /*EF Relation*/
 
         public Impressora Impressora { get; set; }
+
+        public Tecnico Tecnico { get; set; }
 
         public Departamento Departamento{ get; set; }
     }

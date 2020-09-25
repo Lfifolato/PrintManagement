@@ -30,6 +30,8 @@ namespace PrintManagement.Data
 
         public DbSet<ContadorDeImpressao> contadorDeImpressaos{ get; set; }
 
+        public DbSet<PrintManagement.Models.Tecnico> Tecnico { get; set; }
+
 
     }
 }
