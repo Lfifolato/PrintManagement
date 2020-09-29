@@ -50,4 +50,4 @@
             init(this, options);
         }
     })
-})(jQuery);
+})
