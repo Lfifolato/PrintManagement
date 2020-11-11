@@ -87,7 +87,7 @@ namespace PrintManagement.Controllers
         // POST: ContratoDeImpressoras/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Tipo,Idfornecedor,Franquia,ValorContrato,ValorExcedente,Vigencia,DataInicio")] ContratoDeImpressora contratoDeImpressora)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,Tipo,IdFornecedor,Franquia,ValorContrato,ValorExcedente,Vigencia,DataInicio")] ContratoDeImpressora contratoDeImpressora)
         {
             if (id != contratoDeImpressora.Id)
             {

@@ -28,11 +28,11 @@ namespace PrintManagement.Models
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Valor do Contrato:")]
-        public decimal ValorContratado { get; set; }
+        public double ValorContratado { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Valor de Execetente:")]
-        public decimal ValorExcedente { get; set; }
+        public double ValorExcedente { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Vigencia:")]
